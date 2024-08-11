@@ -30,3 +30,17 @@ main {
   height: 100vh;
   background-color: #333;
 }
+h3 {
+  text-align: center
+}
+
+.container{
+  margin: 40px;
+  background-color: rgb(0,0,0,0.8);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.container p {
+  text-align: center;
+}
