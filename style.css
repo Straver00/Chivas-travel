@@ -82,6 +82,10 @@ h2 {
   color: #ffc6c6;
 }
 
+h3 {
+  text-align: center
+}
+
 .container{
   margin: 40px;
   background-color: rgb(0,0,0,0.8);
