@@ -43,11 +43,10 @@ gap: 15px;
 }
 
 nav a {
-  background-color: #ff0000; /* Fondo rojo */
   color: #ffffff; /* Texto blanco */
   padding: 10px 15px;
   text-decoration: none;
-  border-radius: 5px; /* Bordes redondeados */
+  border-radius: 5px;
   transition: background-color 0.3s, color 0.3s; /* Transición suave */
 }
 
@@ -87,7 +86,7 @@ h2 {
   align-items: center;
   justify-content: space-between; /* Ensure buttons are positioned correctly */
   max-width: 800px;
-  height: 500px;
+  height: 550px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
@@ -101,7 +100,7 @@ h2 {
 .carousel-item {
   min-width: 100%; /* Ensures only one item is visible at a time */
   box-sizing: border-box;
-  height: 500px;
+  height: 550px;
   padding: 20px;
   text-align: center;
   border: 1px solid #ddd;
