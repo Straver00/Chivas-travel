@@ -272,9 +272,13 @@ footer p {
 
   .nav-menu.active {
     display: flex; /* Muestra el menú cuando está activo */
-
+    height: 300px;
   }
 
+  nav {
+    flex-direction: column;
+    gap: 0;
+  }
   .container-logo {
     display: flex;
     align-items: center;
