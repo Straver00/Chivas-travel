@@ -1,25 +1,26 @@
 body{
-  margin:0
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../images/fontoUser.avif');
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed;
 }
 .sidebar {
   background: #333;
   color: white;
   max-width: 200px;
   transition: transform 0.5s;
+  position: relative;
 }
-  &.isClosed {
-    transform: translateX(-100%);
-  }
-  &__button {
-    width: 300px;
-    border: 1px solid #ddf;
-    padding: 1rem;
-    border-radius: 0.25rem;
-  }
 
-.sidebar.isClosed {
-  transform: translateX(-100%);
-}
 
 main {
   display: flex;
