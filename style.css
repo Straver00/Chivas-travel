@@ -2,6 +2,7 @@ html, body {
 margin: 0;
 padding: 0;
 font-family: Helvetica, sans-serif;
+font-size: 22px;
 background-color: #252525;
 color:#ffffff
 }
@@ -12,7 +13,7 @@ color:#ffffff
   justify-content: center;
   height: 100px;
   background-color: #000000;
-  color:#ffffff;
+
   text-align: center;
 }
 .logo img {
@@ -35,6 +36,12 @@ header {
   color: #ccc;
 }
 
+nav {
+display: flex;
+justify-content: space-around;
+gap: 15px;
+}
+
 nav a {
   background-color: #ff0000; /* Fondo rojo */
   color: #ffffff; /* Texto blanco */
@@ -42,6 +49,11 @@ nav a {
   text-decoration: none;
   border-radius: 5px; /* Bordes redondeados */
   transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+nav a:hover {
+  color: #ff0000;
+  text-decoration: none;
 }
 
 nav a:hover {
@@ -66,12 +78,16 @@ h2 {
   justify-content: center;
 }
 
+.container p {
+  text-align: center;
+}
 
 .carousel-container {
   display: flex;
   align-items: center;
   justify-content: space-between; /* Ensure buttons are positioned correctly */
   max-width: 800px;
+  height: 500px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
@@ -85,6 +101,7 @@ h2 {
 .carousel-item {
   min-width: 100%; /* Ensures only one item is visible at a time */
   box-sizing: border-box;
+  height: 500px;
   padding: 20px;
   text-align: center;
   border: 1px solid #ddd;
@@ -92,6 +109,12 @@ h2 {
   background-color: #333333;
 }
 
+.carousel-item img {
+  aspect-ratio: 16/9;
+  height: 250px;
+  width: auto;
+  border-radius: 10px;
+}
 .carousel-btn {
   background-color: #ff2f00;
   border: none;
@@ -100,6 +123,7 @@ h2 {
   padding: 10px;
   cursor: pointer;
   z-index: 10;
+  border-radius: 5px;
 }
 
 .left-btn {
@@ -114,4 +138,20 @@ h2 {
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+ul {
+  list-style-type: none;
+
+}
+
+ul li {
+  margin-bottom: 5px;
+  text-align: center;
+}
+footer p {
+  background-color: #000000;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
 }
