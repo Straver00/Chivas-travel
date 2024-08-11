@@ -303,6 +303,7 @@ footer p {
 
   }
   .carousel-item {
+    border: none;
     width: 90px;
     display: flex;
     flex-direction: column;
