@@ -24,7 +24,7 @@ color:#ffffff
   font-size: 1.5em;
   margin: 0;
 }
-
+/* headeeer */
 header {
   width: 100%;
   height: 70px;
@@ -35,17 +35,20 @@ header {
   color: #ccc;
 }
 
-nav {
-display: flex;
-justify-content: space-around;
-gap: 15px;
-}
-
 nav a {
-  color: #ffffff;
+  background-color: #ff0000; /* Fondo rojo */
+  color: #ffffff; /* Texto blanco */
+  padding: 10px 15px;
   text-decoration: none;
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
 }
 
+nav a:hover {
+  background-color: #ffffff; /* Fondo blanco al pasar el mouse */
+  color: #000000; /* Texto negro al pasar el mouse */
+}
+/* close header */
 h2 {
   text-align: center;
   margin-top: 20px;
