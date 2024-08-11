@@ -6,7 +6,7 @@ html, body {
   font-size: 22px;
   background-color: #252525;
   color: #ffffff;
-  background-image: url('images/paisajeFondo.jpeg'); /* Replace with your image path */
+  background-image: url('../images/paisajeFondo.jpeg'); /* Replace with your image path */
   background-size: cover; /* Ensures the image covers the entire background */
   background-position: center center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
