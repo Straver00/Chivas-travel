@@ -207,6 +207,7 @@ footer p {
 }
 
 .button-50 {
+  text-decoration: none;
   font-weight: bold;
   appearance: button;
   background-color: #ffffff;
