@@ -1,80 +1,95 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url('../images/fondo.png');
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-position: center center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed;
-  }
-  
-  .container {
-    margin: 40px;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 30px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .form-container {
-    width: 100%;
-  }
-  
-  h2 {
-    margin: 0 0 20px;
-    font-size: 24px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #fc7f03;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-  }
-  
-  button:hover {
-    background-color: #e67e22;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  .toggle-button {
-    margin-bottom: 20px;
-    background-color: #fc7f03;
-    border: none;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .toggle-button:hover {
-    background-color: #e67e22;
-  }
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../images/fondo.png');
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed;
+}
+
+.container {
+  margin: 40px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-container {
+  width: 100%;
+}
+
+h2 {
+  margin: 0 0 20px;
+  font-size: 24px;
+}
+
+input {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fc7f03;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+a {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fc7f03;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+}
+button:hover {
+  background-color: #e67e22;
+}
+
+.hidden {
+  display: none;
+}
+
+.toggle-button {
+  margin-bottom: 20px;
+  background-color: #fc7f03;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.toggle-button:hover {
+  background-color: #e67e22;
+}
+
+.volver-ingresar{
+  display: flex;
+  gap: 10px;
+}
