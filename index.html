@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
     <div class="container-logo">
       <div class="logo">
         <img src="images\logo.png" />
         <h1>Chivas</h1>
       </div>
     </div>
-    <header>
+    <div class="nav-menu">
       <nav>
         <a href="#inicio">Inicio</a>
         <a href="#cuenta">Cuenta</a>
@@ -23,7 +24,9 @@
         <a href="#contacto">Contacto</a>
         <a href="#about">Acerca de nosotros</a>
       </nav>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </header>
+  </header>
 
     <main>
       <div class="container">
@@ -133,6 +136,8 @@
       <img src="images/whatsapp.svg" alt="WhatsApp">
     </a>
     
+    
+    <script src="JS/ScrollColor.js"></script>
     <footer>
       <p>&copy; 2024 Viajes en Chivas. Todos los derechos reservados.</p>
     </footer>
