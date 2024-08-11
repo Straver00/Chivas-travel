@@ -6,10 +6,8 @@ const sidebarTrigger = document.getElementById(
 sidebarTrigger.addEventListener("click", () => {
     if (sidebar.classList.contains("isClosed")) {
       sidebar.classList.remove("isClosed")
-      sidebarTrigger.innerText = "CLOSE"
     } else {
       sidebar.classList.add("isClosed")
-      sidebarTrigger.innerText = "OPEN"
     }
   })
   
