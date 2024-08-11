@@ -7,6 +7,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url('../images/fondo.png');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed;
   }
   
   .container {

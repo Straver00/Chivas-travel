@@ -6,11 +6,11 @@ document.getElementById('toggleButton').addEventListener('click', function() {
     if (signInForm.classList.contains('hidden')) {
       signInForm.classList.remove('hidden');
       signUpForm.classList.add('hidden');
-      button.textContent = 'Switch to Sign Up';
+      button.textContent = 'Cambiar a Registrar';
     } else {
       signInForm.classList.add('hidden');
       signUpForm.classList.remove('hidden');
-      button.textContent = 'Switch to Sign In';
+      button.textContent = 'Cambiar a Ingresar';
     }
   });
   
