@@ -1,6 +1,13 @@
 body{
   margin: 0;
   font-family: Arial, sans-serif;
+  background-color: #333;
+  height: 100vh;
+  background-image: url('../images/montain.jpeg');
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed;
 }
 
 .container {
@@ -28,13 +35,33 @@ nav a {
   gap: 50px;
   list-style: none;
   padding: 15px;
+  margin-bottom: 5px;
+  border-radius: 5px;
   text-decoration: none;
   color: #fff;
   transition: 0.5s;
+
 }
 nav a:hover {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
   box-shadow: 2px 2px 5px rgba(255, 140, 0, 0.838);
 }
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  /* color: #ffc27d; */
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(255, 140, 0, 0.838); /* Adds a shadow */
+}
 
+
+.label-container {
+  display: flex;
+  flex-direction: column; /* Stack the labels vertically */
+  gap: 10px; /* Optional: add spacing between labels */
+}
+
+.label-container label {
+  margin: 0; /* Remove default margins if any */
+}
