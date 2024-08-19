@@ -19,13 +19,14 @@ main {
   justify-content: stretch;
 }
 
-h2 {
+h2, h3 {
   text-align: center;
   margin-top: 20px;
   /* color: #ffc27d; */
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(255, 140, 0, 0.838); /* Adds a shadow */
 }
+
 
 .container{
   display: flex;
@@ -56,7 +57,7 @@ form {
   background-color: rgb(0,0,0,0.8);
   padding: 30px;
   border-radius: 10px;
-  width: 70%;
+  width: auto;
 }
 button[type="submit"] {
   background-color: #007bff;

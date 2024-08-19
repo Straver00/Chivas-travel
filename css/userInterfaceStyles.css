@@ -55,7 +55,7 @@ h1 {
   text-shadow: 2px 2px 5px rgba(255, 140, 0, 0.838); /* Adds a shadow */
 }
 
-
+/* no funciona para poner las etiquetas una debajo de otra */
 .label-container {
   display: flex;
   flex-direction: column; /* Stack the labels vertically */
