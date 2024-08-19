@@ -8,65 +8,64 @@
   <link rel="icon" href="../images/logo.png" type="image/png" />
 </head>
 <body>
+  <main>
+    <div class="container">
+      <button id="toggleButton" class="toggle-button">Cambiar a Registrarse</button>
+      <div id="loginForm" class="form-container">
+        <h1>Ingresar</h1>
+        <form id="login-form">
+          <label for="login-correo">Correo</label>
+          <input type="text" id="login-correo" name="username" required>
+          <label for="login-password">Contraseña</label>
+          <input type="password" id="login-password" name="password" required>
 
-  <div class="container">
-    <button id="toggleButton" class="toggle-button">Cambiar a Registrarse</button>
-    
-    <div id="loginForm" class="form-container">
-      <h2>Ingresar</h2>
-      <form id="login-form">
-        <label for="login-correo">Correo</label>
-        <input type="text" id="login-correo" name="username" required>
-        <label for="login-password">Contraseña</label>
-        <input type="password" id="login-password" name="password" required>
+          <div class="container-salir">
+            <a href="../index.html">Volver</a>
+            <button type="submit">Registrarse</button>
+          </div>
+          <span>&nbsp;</span>
+        </form>
+      </div>
 
-        <div class="container-salir">
-          <a href="../index.html">Volver</a>
-          <button type="submit">Registrarse</button>
-        </div>
-        <span>&nbsp;</span>
-      </form>
+      <div id="registerForm" class="form-container hidden">
+        <h2>Registrarse</h2>
+        <form id="register-form">
+          <label for="register-correo">Correo</label>
+          <input type="text" id="register-correo" name="username" required>
+
+          <label for="register-name">Nombre</label>
+          <input type="text" id="register-name" name="name" required>
+
+          <label for="register-lastname">Apellido</label>
+          <input type="text" id="register-lastname" name="lastname" required>
+
+          <label for="register-edad">Edad</label>
+          <input type="text" id="register-edad" name="age" required>
+
+          <label for="register-contacto">Teléfono</label>
+          <input type="text" id="register-contacto" name="phone" required>
+
+          <label for="register-document">Documento</label>
+          <input type="text" id="register-document" name="document" required>
+
+          <labbel for="eps">EPS</labbel>
+          <input type="text" id="register-eps" name="eps" required>
+
+          <label for="register-password">Contraseña</label>
+          <input type="password" id="register-password" name="password" required>
+          
+          <label for="register-confirm-password">Confirmar Contraseña</label>
+          <input type="password" id="register-confirm-password" name="confirmPassword" required>
+
+          <div class="container-salir">
+            <a href="../index.html">Volver</a>
+            <button type="submit">Registrarse</button>
+          </div>
+          <span>&nbsp;</span>
+        </form>
+      </div>
     </div>
-
-    <div id="registerForm" class="form-container hidden">
-      <h2>Registrarse</h2>
-      <form id="register-form">
-        <label for="register-correo">Correo</label>
-        <input type="text" id="register-correo" name="username" required>
-
-        <label for="register-name">Nombre</label>
-        <input type="text" id="register-name" name="name" required>
-
-        <label for="register-lastname">Apellido</label>
-        <input type="text" id="register-lastname" name="lastname" required>
-
-        <label for="register-edad">Edad</label>
-        <input type="text" id="register-edad" name="age" required>
-
-        <label for="register-contacto">Teléfono</label>
-        <input type="text" id="register-contacto" name="phone" required>
-
-        <label for="register-document">Documento</label>
-        <input type="text" id="register-document" name="document" required>
-
-        <labbel for="eps">EPS</labbel>
-        <input type="text" id="register-eps" name="eps" required>
-
-        <label for="register-password">Contraseña</label>
-        <input type="password" id="register-password" name="password" required>
-        
-        <label for="register-confirm-password">Confirmar Contraseña</label>
-        <input type="password" id="register-confirm-password" name="confirmPassword" required>
-
-        <div class="container-salir">
-          <a href="../index.html">Volver</a>
-          <button type="submit">Registrarse</button>
-        </div>
-        <span>&nbsp;</span>
-      </form>
-    </div>
-  </div>
-
+  </main>
   <script src="../JS/change.js"></script>
   <script src="../JS/login.js"></script>
   

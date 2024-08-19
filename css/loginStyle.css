@@ -1,11 +1,18 @@
+@font-face {
+  font-family: 'mulish';
+  src: url('../fonts/Mulish-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'mulishItalic';
+  src: url('../fonts/Mulish-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'mulish', Helvetica, Arial, sans-serif;
   background-color: #333;
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   background-image: url('../images/fondo.png');
   background-size: cover; /* Ensures the image covers the entire background */
@@ -14,7 +21,14 @@ body {
   background-attachment: fixed;
 }
 
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .container {
+
   margin: 40px;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 30px;
@@ -31,7 +45,8 @@ body {
   width: 100%;
 }
 
-h2 {
+h1 {
+  font-family: 'mulishItalic';
   margin: 0 0 20px;
   font-size: 24px;
 }
@@ -49,7 +64,6 @@ button, a {
 }
 
 button {
-
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -61,8 +75,10 @@ button {
 }
 
 button:hover {
-  background-color: #e67e22;
+  background-color: #ffffff;
+  color: #fc7f03;;
 }
+
 
 .container-salir {
   display: flex;
@@ -84,7 +100,10 @@ a {
   width: 100%;
 }
 
-
+a:hover {
+  background-color: #ffffff;
+  color: #fc7f03;
+}
 
 .hidden {
   display: none;
@@ -102,7 +121,8 @@ a {
 }
 
 .toggle-button:hover {
-  background-color: #e67e22;
+  background-color: #ffffff;
+  color: #fc7f03;
 }
 
 .volver-ingresar{

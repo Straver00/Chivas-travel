@@ -1,8 +1,15 @@
+@font-face {
+  font-family: 'mulish';
+  src: url('../fonts/Mulish-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'mulishItalic';
+  src: url('../fonts/Mulish-Italic-VariableFont_wght.ttf') format('truetype');
+}
 html, body {
-    scroll-behavior: smooth;
     margin: 0;
-    padding: 0;
-    font-family: Helvetica, sans-serif;
+    font-family: 'mulish', Helvetica, sans-serif;
     font-size: 22px;
     color: #ffffff;
     background-image: url('../images/beach-Landscape.jpg'); /* Replace with your image path */
@@ -10,23 +17,29 @@ html, body {
     background-position: center center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
   }
 
 main {
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: stretch;
 }
 
-h2, h3 {
+h1 {
+  font-family: 'mulishItalic';
   text-align: center;
   margin-top: 20px;
-  /* color: #ffc27d; */
   color: #ffffff;
-  text-shadow: 2px 2px 5px rgba(255, 140, 0, 0.838); /* Adds a shadow */
 }
 
+h2{
+  font-family: 'mulishItalic';
+  text-align: center;
+}
 
 .container{
   display: flex;

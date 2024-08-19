@@ -1,8 +1,18 @@
+@font-face {
+  font-family: 'mulish';
+  src: url('../fonts/Mulish-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'mulishItalic';
+  src: url('../fonts/Mulish-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
 html, body {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-  font-family: Helvetica, sans-serif;
+  font-family: 'mulish', Helvetica, sans-serif;
   font-size: 22px;
   color: #ffffff;
   background-image: url('../images/paisajeFondo.jpeg'); /* Replace with your image path */
@@ -39,7 +49,8 @@ body::before {
 }
 
 .logo h1 {
-  font-size: 1.5em;
+  font-size: 1.8em;
+  font-weight: 800;
   margin: 0;
 }
 
@@ -73,13 +84,13 @@ nav a:hover {
   color: #000000; /* Texto negro al pasar el mouse */
   box-shadow: 2px 2px 5px rgba(255, 140, 0, 0.838);
 }
-/* close header */
+
 h2 {
+  font-family: 'mulishItalic';
   text-align: center;
   margin-top: 20px;
-  /* color: #ffc27d; */
   color: #ffffff;
-  text-shadow: 2px 2px 5px rgba(255, 140, 0, 0.838); /* Adds a shadow */
+
 }
 
 
