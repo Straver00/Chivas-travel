@@ -14,22 +14,25 @@ loginForm?.addEventListener('submit', e => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ correo, password })
+    body: JSON.stringify({ correo, password }),
+
   })
-  .then(res => res.json())
-  .then(data => {
-    if (data.success) {
+  .then(res => {
+    console.log(res)
+    if (res.ok) {
       loginSpan.innerText = 'Sesión iniciada... Entrando...'
       loginSpan.style.color = 'green'
       setTimeout(() => {
         window.location.href = '/userInterface'
       }, 2000)
     } else {
+      console.log(res)
       loginSpan.innerText = data.error || 'Error al iniciar sesión'
       loginSpan.style.color = 'red'
     }
   })
   .catch(error => {
+    console.log(data)
     loginSpan.innerText = 'Error de red. Inténtalo de nuevo.'
     loginSpan.style.color = 'red'
     console.error('Error:', error);
