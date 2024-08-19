@@ -23,7 +23,7 @@ loginForm?.addEventListener('submit', e => {
       loginSpan.innerText = 'Sesión iniciada... Entrando...'
       loginSpan.style.color = 'green'
       setTimeout(() => {
-        window.location.href = '/userInterface'
+        window.location.href = '../html/userInterface.html'
       }, 2000)
     } else {
       console.log(res)
