@@ -7,20 +7,11 @@
   <title>Reserva - Catálogo de Viajes</title>
 </head>
 <body>
-  <h1>Formulario de Reserva</h1>
-  <div id="reservation-info"></div>
-
-<!-- Formulario -->
-<section id="preguntas">
-  <div class="container">
-    <div class="preguntas">
-      <!-- Existing FAQ Section -->
-      <div class="pregunta">
-
-      <!-- New Form Section -->
-      <h2 id="scroll-text">Formulario de Reserva</h2>
-      <form id="reservation-form">
-        <div class="form-group">
+  <main>
+  <!-- Formulario -->
+    <div class="container">
+        <form id="reservation-form">
+          <h2 id="scroll-text">Formulario de Reserva</h2>
           <label for="trip">Selecciona un viaje:</label>
           <select id="trip" name="trip">
             <option value="santa-fe">Santa fé</option>
@@ -28,30 +19,21 @@
             <option value="santorini">Santorini</option>
             <option value="another-destination">Otro Destino</option>
           </select>
-        </div>
 
-        <div class="form-group">
           <label for="start-date">Fecha de inicio:</label>
           <input type="date" id="start-date" name="start-date" required>
-        </div>
 
-        <div class="form-group">
           <label for="end-date">Fecha de finalización:</label>
           <input type="date" id="end-date" name="end-date" required>
-        </div>
 
-        <div class="form-group">
           <label for="num-persons">Número de personas:</label>
           <input type="number" id="num-persons" name="num-persons" min="1" required>
-        </div>
 
-        <button type="submit">Enviar Reserva</button>
-      </form>
+          <button type="submit">Enviar Reserva</button>
+        </form>
     </div>
-  </div>
-</section>
-
-
+    <div class="personas"></div>
+</main>
   <script>
     // Function to get query parameters
     function getQueryParam(param) {
