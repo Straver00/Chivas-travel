@@ -1,15 +1,15 @@
 document.getElementById('toggleButton').addEventListener('click', function() {
-    const signInForm = document.getElementById('signInForm');
-    const signUpForm = document.getElementById('signUpForm');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
     const button = document.getElementById('toggleButton');
     
-    if (signInForm.classList.contains('hidden')) {
-      signInForm.classList.remove('hidden');
-      signUpForm.classList.add('hidden');
+    if (loginForm.classList.contains('hidden')) {
+      loginForm.classList.remove('hidden');
+      registerForm.classList.add('hidden');
       button.textContent = 'Cambiar a Registrar';
     } else {
-      signInForm.classList.add('hidden');
-      signUpForm.classList.remove('hidden');
+      loginForm.classList.add('hidden');
+      registerForm.classList.remove('hidden');
       button.textContent = 'Cambiar a Ingresar';
     }
   });
