@@ -1,0 +1,75 @@
+html, body {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    font-size: 22px;
+    color: #ffffff;
+    background-image: url('../images/beach-Landscape.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed;
+    width: 100%;
+  }
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    /* color: #ffc27d; */
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(255, 140, 0, 0.838); /* Adds a shadow */
+  }
+  
+  
+  h3 {
+    text-align: center
+  }
+  
+  .container{
+    margin: 40px;
+    background-color: rgb(0,0,0,0.8);
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  .container p {
+    text-align: center;
+  }
+
+
+  /* forms section */
+/* Add styles for the form */
+#reservation-form {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group select,
+  .form-group input {
+    width: 50%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* close forms section */
