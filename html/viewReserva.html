@@ -11,31 +11,26 @@
   <main>
   <!-- Formulario -->
     <div class="container">
-        <form id="reservation-form">
+        <form>
           <h1 id="scroll-text">Formulario de Reserva</h1>
           <label for="trip">Selecciona un viaje:</label>
-          <select id="trip" name="trip">
-            <option value="santa-fe">Santa fé</option>
-            <option value="santa-elena">Santa Elena</option>
-            <option value="santorini">Santorini</option>
-            <option value="another-destination">Otro Destino</option>
+          <select id="selectPlace" name="trip">
           </select>
-
-          <label for="start-date">Fecha de inicio:</label>
-          <input type="date" id="start-date" name="start-date" required>
-
-          <label for="end-date">Fecha de finalización:</label>
-          <input type="date" id="end-date" name="end-date" required>
-
+        </form>
+          <button id="getTrip">Buscar</button>
+          
+          <label>Fechas disponibles:</label>
+          
+          <form id="trips" class="form-trip">            
+          </form>
           <label for="num-persons">Número de personas:</label>
           <input type="number" id="num-persons" name="num-persons" min="1" value="1" required>
 
           <button type="submit">Enviar Reserva</button>
-        </form>
+        
     </div>
 
     <div id="personas-container" class="personas">
-      <!-- Dynamic personas containers will be inserted here -->
       <div class="form-group">
         <h2>Persona 1</h2>
         <label for="name-${i}">Nombre:</label>
@@ -50,9 +45,9 @@
 
 </main>
 
-<!-- N numbers of divs "Persona" -->
-<script src="../JS/dinamicDiv.js"></script>
 
+<script src="../JS/dinamicDiv.js"></script>
+<script src="../JS/viewReserva.js"></script>
 
 </body>
 </html>

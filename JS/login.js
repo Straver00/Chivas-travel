@@ -4,41 +4,59 @@ const loginSpan = document.querySelector('#login-form span');
 const registerForm = document.querySelector('#register-form');
 const registerSpan = document.querySelector('#register-form span');
 
-loginForm?.addEventListener('submit', e => {
-  e.preventDefault();
-  const correo = document.querySelector('#login-correo').value
-  const password = document.querySelector('#login-password').value
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    // Accede a la ruta protegida
+    const response = await fetch('http://localhost:3000/chivas/protected', {
+      method: 'GET',
+      credentials: 'include',
+    });
 
-  fetch('http://localhost:3000/chivas/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ correo, password }),
-
-  })
-  .then(res => {
-    console.log(res)
-    if (res.ok) {
-      loginSpan.innerText = 'Sesión iniciada... Entrando...'
-      loginSpan.style.color = 'green'
-      setTimeout(() => {
-        window.location.href = '../html/userInterface.html'
-      }, 2000)
-    } else {
-      console.log(res)
-      loginSpan.innerText = data.error || 'Error al iniciar sesión'
-      loginSpan.style.color = 'red'
+    // Manejo de la respuesta
+    if (response.ok) {
+      window.location.href = '../html/userInterface.html';
+      console.error('Response ok');
     }
-  })
-  .catch(error => {
-    console.log(data)
-    loginSpan.innerText = 'Error de red. Inténtalo de nuevo.'
-    loginSpan.style.color = 'red'
-    console.error('Error:', error);
-  });
+  } catch (error) {
+    console.error('Error al intentar acceder a la ruta protegida:', error);
+    window.location.href = '../html/userInterface.html'; // Redirige al login si ocurre un error
+  }
 });
 
+loginForm?.addEventListener('submit', async e => {
+  e.preventDefault();
+  const correo = document.querySelector('#login-correo').value;
+  const password = document.querySelector('#login-password').value;
+
+  try {
+    const response = await fetch('http://localhost:3000/chivas/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include',
+      body: JSON.stringify({ correo, password }),
+    });
+    
+    const data = await response.json();
+    
+    if (response.ok) {
+      console.log(data);
+      loginSpan.innerText = 'Sesión iniciada... Entrando...';
+      loginSpan.style.color = 'green';
+      setTimeout(() => {
+        window.location.href = '../html/userInterface.html'; // Verifica la ruta
+      }, 2000);
+    } else {
+      loginSpan.innerText = data.error || 'Error al iniciar sesión';
+      loginSpan.style.color = 'red';
+    }
+  } catch (error) {
+    loginSpan.innerText = 'Error de red. Inténtalo de nuevo.';
+    loginSpan.style.color = 'red';
+    console.error('Error:', error);
+  }
+});
 
 registerForm?.addEventListener('submit', e => {
   e.preventDefault();
@@ -70,7 +88,7 @@ registerForm?.addEventListener('submit', e => {
       registerSpan.style.color = 'green';
       setTimeout(() => {
         window.location.href = '../html/login.html';
-      }, 2000);
+      }, 1000);
     } else {
       return res.json().then(data => {
         registerSpan.innerText = data.error || 'Error desconocido';

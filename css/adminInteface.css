@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'mulish';
+  src: url('../fonts/Mulish-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'mulishItalic';
+  src: url('../fonts/Mulish-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'mulish', Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
+nav {
+  flex-direction: column;
+  width: 25%;
+  height: 100vh;
+  background-color: rgba(49, 49, 49, 0.8);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 5%;
+  padding: 15px;
+}
+
+nav ul {
+  margin-top: 120px;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  padding: 0;
+  text-align: center;
+}
+
+nav a {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  list-style: none;
+  padding: 15px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.5s;
+  font-size: 1.5em;
+}
+button {
+  font-family: 'mulish';
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 15px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  color: #fff;
+  transition: 0.5s;
+  font-size: 1.5em;
+}
+
+main{
+  width: 75%;
+  height: 100vh;
+  background-color: rgba(223, 208, 208, 0.8);
+}
+
+h1 {
+  font-family: 'mulishItalic';
+  text-align: center;
+  margin-top: 20px;
+  color: #ffffff;
+}

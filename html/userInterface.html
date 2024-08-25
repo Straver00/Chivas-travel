@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Cuenta</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../css/userInterfaceStyles.css">
-<link rel="icon" href="../images/logo.png" type="image/png" />
+  <title>Cuenta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/userInterface.css">
+  <link rel="icon" href="../images/logo.png" type="image/png" />
+  <script src="../js/userInterface.js"></script>
 </head>
 <body>
   <div class="container">
@@ -13,29 +14,41 @@
         <img src="../images/logo.png" />
       </div>
       <ul>
-        <a href="#">Inicio</a>
-        <a href="#">Mis Cursos</a>
-        <a href="#">Mis Notas</a>
-        <a href="#">Mis Datos</a>
+        <a href="#">Mis datos</a>
+        <a href="#">Mis Reservas</a>
+        <a href="../html/viewReserva.html">Reservar ahora</a>
+        <a href="../index.html">Volver al inicio</a>
         <button id="logout-button">Cerrar Sesión</a>
       </ul>
     </nav>
 
     <main>
-      <h1>Tu cuenta de Chivas</h1>
-      <p>En esta interfaz podrás ver tus reservas y datos personales.</p>
-      <hr></hr>
-      <div class="label-container">
-        <label for="trip">Nombre:</label>
-        <label for="trip">Apellido:</label>
-        <label for="trip">CC:</label>
-        <label for="trip">Correo:</label>
-        <label for="trip">celular:</label>
-        <label for="trip">Eps:</label>
+      <div id="inicio">
+        <h1>Tu cuenta de Chivas</h1>
+        <p>En esta interfaz podrás ver tus reservas y datos personales.</p>
+        <hr></hr>
+        <div class="label-container">
+          <label for="trip">Nombre:</label>
+          <label for="trip">Correo:</label>
+          <label for="trip">celular:</label>
+          <label for="trip">Eps:</label>
+          <label for="trip">Documento:</label>
+        </div>
       </div>
-
+      <div id="inicio">
+        <h1>Tu cuenta de Chivas</h1>
+        <p>En esta interfaz podrás ver tus reservas y datos personales.</p>
+        <hr></hr>
+        <div class="label-container">
+          <label for="trip">Nombre:</label>
+          <label for="trip">Correo:</label>
+          <label for="trip">celular:</label>
+          <label for="trip">Eps:</label>
+          <label for="trip">Documento:</label>
+        </div>
+      </div>
+      
     </main>
   </div>
-  <script src="../js/userInterface.js"></script>
 </body>
 </html>

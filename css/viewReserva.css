@@ -7,6 +7,7 @@
   font-family: 'mulishItalic';
   src: url('../fonts/Mulish-Italic-VariableFont_wght.ttf') format('truetype');
 }
+
 html, body {
     margin: 0;
     font-family: 'mulish', Helvetica, sans-serif;
@@ -20,7 +21,7 @@ html, body {
     width: 100vw;
     height: 100vh;
     overflow-y: auto;
-  }
+}
 
 main {
   height: 100vh;
@@ -37,6 +38,7 @@ h1 {
 }
 
 h2 {
+  font-family: 1.8em;
   font-family: 'mulishItalic';
   text-align: center;
 }
@@ -46,11 +48,11 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 40px;
   background-color: rgb(0,0,0,0.8);
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
-  width: 30%;
+  width: 50%;
+  margin: 30px;
 }
 
 form {
@@ -66,22 +68,43 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 40px;
+  margin: 30px;
   background-color: rgb(0,0,0,0.8);
   padding: 30px;
   border-radius: 10px;
   width: auto;
 }
-button[type="submit"] {
+button {
   background-color: #007bff;
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  margin: 10px;
 }
 
-button[type="submit"]:hover {
+button:hover {
   background-color: #0056b3;
 }
 
-/* close forms section */
+
+.form-trip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 10px;
+  
+}
+
+.form-trip label  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(144, 132, 253, 0.5);
+  border:#deeeff 1px solid;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.form-trip p {
+  font-size: 0.65em;
+}
