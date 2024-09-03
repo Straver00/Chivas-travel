@@ -9,45 +9,33 @@
 </head>
 <body>
   <main>
-  <!-- Formulario -->
-    <div class="container">
-        <form>
-          <h1 id="scroll-text">Formulario de Reserva</h1>
-          <label for="trip">Selecciona un viaje:</label>
-          <select id="selectPlace" name="trip">
-          </select>
-        </form>
-          <button id="getTrip">Buscar</button>
-          
-          <label>Fechas disponibles:</label>
-          
-          <form id="trips" class="form-trip">            
+    <div class="bigContainer">
+      <div class="container">
+          <a href="../html/userInterface.html">Volver</a>
+          <form>
+            <h1 id="scroll-text">Formulario de Reserva</h1>
+            <label for="trip">Selecciona un viaje:</label>
+            <select id="selectPlace" name="trip">
+              <option value="" disabled selected>Seleccione un lugar</option>
+            </select>
           </form>
-          <label for="num-persons">Número de personas:</label>
-          <input type="number" id="num-persons" name="num-persons" min="1" value="1" required>
+            <button id="getTrip">Buscar</button>
+            
+            <label>Fechas disponibles:</label>
+            <form id="trips" class="form-trip">            
+            </form>
+            <label for="num-persons">Agregar personas (opcional):</label>
+            <input type="number" id="num-persons" name="num-persons" min="0" value="0" required>
+            <button type="submit" id="reserve">Enviar Reserva</button>
+      </div>
 
-          <button type="submit">Enviar Reserva</button>
-        
-    </div>
-
-    <div id="personas-container" class="personas">
-      <div class="form-group">
-        <h2>Persona 1</h2>
-        <label for="name-${i}">Nombre:</label>
-        <input type="text" id="name-1" name="name-1" required>
-        
-        <label for="email-1">Correo:</label>
-        <input type="email" id="email-1" name="email-1" required>
+      <div id="personas-container" class="personas">
+        <form>
+        </form>
       </div>
     </div>
-
-
-
-</main>
-
-
+  </main>
 <script src="../JS/dinamicDiv.js"></script>
 <script src="../JS/viewReserva.js"></script>
-
 </body>
 </html>

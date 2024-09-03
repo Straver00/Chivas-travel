@@ -13,35 +13,26 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'mulish', Helvetica, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
-
-
 nav {
+  display: flex;
   flex-direction: column;
+  align-items: center;
   width: 25%;
   height: 100vh;
+  position: fixed;
   background-color: rgba(49, 49, 49, 0.8);
 }
 
 .logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 5%;
   padding: 15px;
 }
 
 nav ul {
-  margin-top: 120px;
   height: 95%;
   display: flex;
   flex-direction: column;
-  gap: 5vh;
   padding: 0;
   text-align: center;
 }
@@ -59,7 +50,8 @@ nav a {
   transition: 0.5s;
   font-size: 1.5em;
 }
-button {
+
+button, a {
   font-family: 'mulish';
   font-size: 1em;
   display: flex;
@@ -76,15 +68,97 @@ button {
   font-size: 1.5em;
 }
 
+form button {
+  background-color: #fc7f03c9;
+  color: rgba(0, 0, 0, 0.842);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button:hover, a:hover {
+  background-color: #fc7f0380;
+}
+
+
 main{
+  margin:0;
   width: 75%;
-  height: 100vh;
-  background-color: rgba(223, 208, 208, 0.8);
+  height: 100%;
+  margin-left: 25%;
 }
 
 h1 {
   font-family: 'mulishItalic';
   text-align: center;
-  margin-top: 20px;
-  color: #ffffff;
+  color: #000000;
+  margin: 0;
+  padding: 5px;
+}
+
+h2 {
+  padding: 10px;
+  text-align: center;
+  margin: 0;
+}
+
+p {
+  padding: 10px
+}
+
+.viajesBotones{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.viajesBotones button {
+  background-color: #fc7f03c9;
+  color: rgba(0, 0, 0, 0.842);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px;
+}
+.trips {
+  display: grid;
+  margin: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(202, 236, 197, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+}
+.cancelados {
+  background-color: rgba(202, 144, 126, 0.8);
+}
+.card p {
+  text-align: center;
+  padding: 5px;
+  margin: 0;
+}
+
+.card button {
+  background-color: #fc7f03c9;
+  color: rgba(0, 0, 0, 0.842);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.card button:hover {
+  background-color: #fc7f0380;
 }

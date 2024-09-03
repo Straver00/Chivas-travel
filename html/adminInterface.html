@@ -8,20 +8,57 @@
   <link rel="stylesheet" href="../css/adminInteface.css">
 </head>
 <body>
-  <nav>
-    <div class="logo">
-      <img src="../images/logo.png" />
-    </div>
-    <ul>
-      <a href="#">Ver viajes</a>
-      <a href="#">Crear Viaje</a>
-      <a href="#">Cancelar Viaje</a>
-      <a href="../index.html">Ver la pagina</a>
-      <button id="logout-button ">Cerrar Sesión</a>
-    </ul>
-  </nav>
-  <main>
-
-  </main>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <img src="../images/logo.png" />
+      </div>
+      <ul>
+        <a href="#verTrips">Ver viajes</a>
+        <a href="#verCrearViaje">Crear Viaje</a>
+        <a href="../index.html">Ver la pagina</a>
+        <button id="logout-button">Cerrar Sesión</a>
+      </ul>
+    </nav>
+    <main>
+      <h1>Interfaz de Administrador</h1>
+      <p>En esta interfaz podrás ver, crear y cancelar viajes.</p>
+      <hr></hr>
+      <div id="verTrips">
+        <h2>Viajes</h2>
+        <div class="viajesBotones">
+          <button id="viajesActivos">Viajes Activos</button>
+          <button id="viajesCancelados">Viajes Cancelados</button>
+          <button id="viajesTodos">Todos los viajes</button>
+        </div>
+        <div id="trips" class="trips">
+        </div>
+      </div>
+      <hr></hr>
+      <div id="verCrearViaje">
+        <h2>Crear Viaje</h2>
+        <form id="crear-viaje">
+          <label for="destino">Destino:</label>
+          <input type="text" id="destino" name="destino" required><br>
+          <label for="origen">Origen:</label>
+          <input type="text" id="origen" name="origen" required><br>
+          <label for="cupo">Cupo: </label>
+          <input type="number" id="cupo" name="cupo" required><br>
+          <label for="precio-viaje">Precio del viaje:</label>
+          <input type="number" id="precio-viaje" name="precio-viaje" required><br>
+          <label for="fecha-viaje">Fecha del viaje:</label>
+          <input type="date" id="fecha-viaje" name="fecha-viaje" required><br>
+          <label for="hora-salida">Hora de salida:</label>
+          <input type="time" id="hora-salida" name="hora-salida" required><br>
+          <label for="hora-llegada">Hora de llegada:</label>
+          <input type="time" id="hora-regreso" name="hora-llegada" required><br>
+          <label for="comidas">Comidas:</label>
+          <input type="text" id="comidas" name="comidas" required><br>
+          <button type="submit">Crear Viaje</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script src="../JS/adminInterface.js"></script>
 </body>
 </html>

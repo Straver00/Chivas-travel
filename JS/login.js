@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   } catch (error) {
     console.error('Error al intentar acceder a la ruta protegida:', error);
-    window.location.href = '../html/userInterface.html'; // Redirige al login si ocurre un error
   }
 });
 
@@ -65,8 +64,7 @@ registerForm?.addEventListener('submit', e => {
   const lastName = document.querySelector('#register-lastname').value;
   const contacto = document.querySelector('#register-contacto').value;
   const documento = document.querySelector('#register-document').value;
-  const edad = document.querySelector('#register-edad').value;
-  const eps = document.querySelector('#register-eps').value;
+  const fechaNacimiento = document.querySelector('#register-birthdate').value;
   const password = document.querySelector('#register-password').value;
   const confirmPassword = document.querySelector('#register-confirm-password').value;
 
@@ -80,7 +78,7 @@ registerForm?.addEventListener('submit', e => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ correo, documento, nombre, lastName, edad, contacto, eps, password})
+    body: JSON.stringify({ correo, documento, nombre, lastName, fechaNacimiento, contacto, password})
   })
   .then(res => {
     if (res.ok) {
