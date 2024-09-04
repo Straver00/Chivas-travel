@@ -42,6 +42,9 @@ h2 {
   text-align: center;
 }
 
+p {
+  text-align: center;
+}
 .container{
   display: flex;
   flex-direction: column;
@@ -91,7 +94,7 @@ button:hover {
 
 .form-trip {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(3, 1fr); 
   gap: 10px;
   
 }

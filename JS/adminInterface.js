@@ -6,23 +6,23 @@ let changesMade = false;
 //cargar datos de la base de datos
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-
     const response = await fetch('http://localhost:3000/chivas/protectedAdmin', {
       method: 'GET',
       credentials: 'include',
     });
-
     if (!response.ok) {
       window.location.href = '../html/loginAdmin.html';
       console.error('response not ok');
     } else {
       const data = await response.json();
+      console.log(data)
       dataAdmin = data;
       document.getElementById('admin-name').textContent = dataAdmin.nombre;
       
     }
   } catch (error) {
     console.error('Error al intentar acceder a la ruta protegida:', error);
+    window.location.href = '../html/loginAdmin.html';
   }
 
   try {
@@ -67,15 +67,17 @@ evitarCerrar();
 // Logout
 document.getElementById('logout-button').addEventListener('click', async () => {
 try {
-
-  await fetch('http://localhost:3000/chivas/logoutAdmin', {
+  const response = await fetch('http://localhost:3000/chivas/logoutAdmin', {
     method: 'POST',
     credentials: 'include',
   });
 
-  window.location.href = '../html/loginAdmin.html';
+  if(response.ok) {
+    window.location.href = '../html/loginAdmin.html';
+  }
 } catch (error) {
   console.error('Error al cerrar sesión:', error);
+  window.location.href = '../html/loginAdmin.html';
 }
 });
 
@@ -127,6 +129,7 @@ if (e.target.id === 'cancelar') {
     const response = await fetch(`http://localhost:3000/chivas/cancelViaje/${id}`, {
       method: 'POST',
       credentials: 'include',
+      body: JSON.stringify({ id_usuario }),
     });
 
     if (response.ok) {
@@ -173,6 +176,57 @@ if (e.target.id === 'editar') {
 // Eventos de los botones de las reservas
 const reservasElement = document.getElementById('reservas');
 
+// Pagar Reserva
+reservasElement.addEventListener('click', async e => {
+  if (e.target.id === 'pagar') {
+    const id_reserva = e.target.parentElement.id;
+    const id_usuario = e.target.parentElement.querySelector('p:nth-child(3)').textContent.split(' ')[2];
+    console.log(id_reserva, id_usuario);
+    try {
+      const response = await fetch(`http://localhost:3000/chivas/confirmPago/${id_reserva}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include',
+        body: JSON.stringify({ id_usuario }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        alert('Pago confirmado.');
+        window.location.href = '../html/adminInterface.html';
+      }
+    } catch (error) {
+      console.error('Error al intentar reembolsar la reserva:', error);
+    }
+  }
+});
+
+// Reembolsar Reserva
+reservasElement.addEventListener('click', async e => {
+  if (e.target.id === 'reembolsar') {
+    const id_reserva = e.target.parentElement.id;
+
+    try {
+      const response = await fetch(`http://localhost:3000/chivas/refundPago/${id_reserva}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include',
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        alert('Reembolso Confimado.');
+        window.location.href = '../html/adminInterface.html';
+      }
+    } catch (error) {
+      console.error('Error al intentar reembolsar la reserva:', error);
+    }
+  }
+});
 // Crear viaje
 const formCrearViaje = document.getElementById('crear-viaje');
 formCrearViaje.addEventListener('submit', async e => {
@@ -285,8 +339,8 @@ function filtrarYMostrarViajes(tipo) {
         <p>Hora llegada: ${hora_regreso}</p>
         <p>Precio: ${precio}</p>
         ${viaje.cancelado ? '<p>Cancelado</p>' : `
-          <button class="cancelar" id="cancelar-${id}">Cancelar</button>
-          <button class="editar" id="editar-${id}">Editar</button>
+          <button class="cancelar" id="cancelar">Cancelar</button>
+          <button class="editar" id="editar">Editar</button>
         `}
       </div>
     `;
@@ -305,7 +359,6 @@ document.getElementById('viajesCancelados').addEventListener('click', () => {
 document.getElementById('viajesTodos').addEventListener('click', () => {
   filtrarYMostrarViajes('todos');
 });
-
 
 // Mostrar reservas
 function filtrarYMostrarReservas(tipo) {
@@ -331,6 +384,7 @@ function filtrarYMostrarReservas(tipo) {
   reservasFiltradas.forEach(reserva => {
     const id_reserva = reserva.id_reserva;
     const id_viaje = reserva.id_viaje;
+    const id_usuario = reserva.id_usuario;
     const n_boletas = reserva.n_boletas;
     const monto_total = reserva.monto_total;
     const pagado = reserva.pagado ? 'Sí' : 'No';
@@ -340,12 +394,13 @@ function filtrarYMostrarReservas(tipo) {
       <div class="card ${vigente}" id="${id_reserva}">
         <p>ID Reserva: ${id_reserva}</p>
         <p>ID Viaje: ${id_viaje}</p>
+        <p>ID Usuario: ${id_usuario}</p>
         <p>Número de Boletas: ${n_boletas}</p>
         <p>Monto Total: ${monto_total}</p>
         <p>Pagado: ${pagado}</p>
-        ${reserva.vigente === 0 ? '<p>Cancelada</p>' : `
-          <button class="cancelar" id="cancelar-${id_reserva}">Confirmar reembolso</button>
-          <button class="editar" id="editar-${id_reserva}">Confirmar pago</button>
+        ${reserva.vigente === 0 ? '<p>Cancelada</p>' : reserva.pagado ? 
+          '<button class="confirmarReembolso" id="reembolsar">Confirmar reembolso</button>' : `
+          <button class="confirmarPago" id="pagar">Confirmar pago</button>
         `}
       </div>
     `;

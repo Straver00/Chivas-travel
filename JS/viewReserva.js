@@ -46,15 +46,25 @@ const searchTrips = document.getElementById('getTrip');
 let id_viaje;
 searchTrips.addEventListener('click', async () => { 
   try {
+    if (!select.value) {
+      alert('Por favor selecciona un destino');
+      return;
+    }
     const response = await fetch(`http://localhost:3000/chivas/viajes/${select.value}`);
     const viajes = await response.json();
-    id_viaje = viajes[0].id_viaje;
     const trips = document.getElementById('trips');
+    if (!viajes.length) {
+      trips.innerHTML = '<p></p><p>No hay viajes disponibles</p>';
+      return;
+    }
+    id_viaje = viajes[0].id_viaje;
     trips.innerHTML = '';
     
+ 
     viajes.forEach(viaje => {
       const id = viaje.id_viaje
       const origen = viaje.origen;
+      const destino = viaje.destino;
       const fecha = viaje.fecha_viaje.split('T')[0];
       const hora = viaje.hora_salida.slice(0, 5);
       const precio = viaje.precio_boleto;
@@ -66,6 +76,7 @@ searchTrips.addEventListener('click', async () => {
         <input type="radio" name="viaje" value="${id}">
           <div>
             <p>Origen: ${origen}<br>
+            Destino: ${destino}<br>
             Fecha: ${fecha}<br>
             Hora: ${hora}<br>
             Precio: $${precio}<br>

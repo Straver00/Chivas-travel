@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.error('response not ok');
     } else {
       const data = await response.json();
-      console.log(data);
       try {
         for (let i = 0; i < data.length; i++) {
           const response = await fetch(`http://localhost:3000/chivas/viajesId/${data[i].id_viaje}`);
@@ -45,14 +44,15 @@ document.addEventListener('DOMContentLoaded', async () => {
           const trips = document.getElementById('reservas');
           trips.innerHTML += `
           <div class="card" id="${data[i].id_reserva}">
+            <p>ID Reserva: ${data[i].id_reserva}</p>
             <p>Origen: ${viaje[0].origen}</p>
             <p>Destino: ${viaje[0].destino}</p>
             <p>Fecha: ${viaje[0].fecha_viaje.split('T')[0]}</p>
             <p>Hora: ${viaje[0].hora_salida.slice(0, 5)}</p>
-            <p>Valor Pagado: ${viaje[0].precio_boleto}</p>
-            <button class="cancelar" id="cancelar">Cancelar</button>
-            <a href="https://api.whatsapp.com/send?phone=573217376010&text=Necesito%20un%20reembolso" target="_blank" class="whatsapp-button">Pedir Reembolso</a>
-          </div>
+            <p>Valor total: ${data[i].monto_total}</p>
+            ${data[i].pagado === 1 ? '<a href="https://api.whatsapp.com/send?phone=573217376010&text=Necesito%20un%20reembolso" target="_blank" class="cancelar">Pedir Reembolso</a>' 
+              : '<button class="cancelar" id="cancelar">Cancelar</button><a href="https://api.whatsapp.com/send?phone=573217376010&text=Quiero%20pagar%20reserva" target="_blank" class="whatsapp-button">Pagar</a>'}
+            </div>
           `;
         }
       } catch {

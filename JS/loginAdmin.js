@@ -35,3 +35,19 @@ loginForm?.addEventListener('submit', async e => {
     console.error('Error:', error);
   }
 });
+
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    // Accede a la ruta protegida
+    const response = await fetch('http://localhost:3000/chivas/protectedAdmin', {
+      method: 'GET',
+      credentials: 'include',
+    });
+    if (response.ok) {
+      window.location.href = '../index.html';
+      console.error('Response ok');
+    }
+  } catch (error) {
+    console.error('Error al intentar acceder a la ruta protegida:', error);
+  }
+});
