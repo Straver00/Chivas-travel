@@ -14,17 +14,20 @@
         <img src="../images/logo.png" />
       </div>
       <ul>
-        <a href="#verTrips">Ver viajes</a>
-        <a href="#verCrearViaje">Crear Viaje</a>
+        <a id="button-ver-viajes">Ver viajes</a>
+        <a id="button-ver-reservas">Ver reservas</a>
+        <a id="button-crear-viaje">Crear Viaje</a>
         <a href="../index.html">Ver la pagina</a>
+        
         <button id="logout-button">Cerrar Sesión</a>
       </ul>
     </nav>
     <main>
+      <div id="view-nombre">
       <h1>Interfaz de Administrador</h1>
-      <p>En esta interfaz podrás ver, crear y cancelar viajes.</p>
-      <hr></hr>
-      <div id="verTrips">
+      <p>Bienvenido <strong id="admin-name"></strong></p>
+      </div>
+      <div id="view-viajes" class="viewViajes">
         <h2>Viajes</h2>
         <div class="viajesBotones">
           <button id="viajesActivos">Viajes Activos</button>
@@ -34,28 +37,59 @@
         <div id="trips" class="trips">
         </div>
       </div>
-      <hr></hr>
-      <div id="verCrearViaje">
+      <div id="view-editar-viaje" class="editarViaje">
+        <h2>Editar Viaje (id: <span id="id-viaje"></span>)</h2>
+        <form id="editar-viaje">
+          <label for="destino-edit">Destino:</label>
+          <input type="text" id="destino-edit" name="destino" required>
+          <label for="origen-edit">Origen:</label>
+          <input type="text" id="origen-edit" name="origen" required>
+          <label for="cupo-edit">Cupo: </label>
+          <input type="number" id="cupo-edit" name="cupo" required>
+          <label for="precio-viaje-edit">Precio del viaje:</label>
+          <input type="number" id="precio-viaje-edit" name="precio-viaje" required>
+          <label for="fecha-viaje-edit">Fecha del viaje:</label>
+          <input type="date" id="fecha-viaje-edit" name="fecha-viaje" required>
+          <label for="hora-salida-edit">Hora de salida:</label>
+          <input type="time" id="hora-salida-edit" name="hora-salida" required>
+          <label for="hora-llegada-edit">Hora de llegada:</label>
+          <input type="time" id="hora-regreso-edit" name="hora-llegada" required>
+          <label for="comidas-edit">Comidas:</label>
+          <input type="text" id="comidas-edit" name="comidas" required>
+          <button type="submit">Editar Viaje</button>
+        </form>
+      </div>
+      <div id="view-crear-viaje" class="crearViaje">
         <h2>Crear Viaje</h2>
         <form id="crear-viaje">
           <label for="destino">Destino:</label>
-          <input type="text" id="destino" name="destino" required><br>
+          <input type="text" id="destino" name="destino" required>
           <label for="origen">Origen:</label>
-          <input type="text" id="origen" name="origen" required><br>
+          <input type="text" id="origen" name="origen" required>
           <label for="cupo">Cupo: </label>
-          <input type="number" id="cupo" name="cupo" required><br>
+          <input type="number" id="cupo" name="cupo" required>
           <label for="precio-viaje">Precio del viaje:</label>
-          <input type="number" id="precio-viaje" name="precio-viaje" required><br>
+          <input type="number" id="precio-viaje" name="precio-viaje" required>
           <label for="fecha-viaje">Fecha del viaje:</label>
-          <input type="date" id="fecha-viaje" name="fecha-viaje" required><br>
+          <input type="date" id="fecha-viaje" name="fecha-viaje" required>
           <label for="hora-salida">Hora de salida:</label>
-          <input type="time" id="hora-salida" name="hora-salida" required><br>
+          <input type="time" id="hora-salida" name="hora-salida" required>
           <label for="hora-llegada">Hora de llegada:</label>
-          <input type="time" id="hora-regreso" name="hora-llegada" required><br>
+          <input type="time" id="hora-regreso" name="hora-llegada" required>
           <label for="comidas">Comidas:</label>
-          <input type="text" id="comidas" name="comidas" required><br>
+          <input type="text" id="comidas" name="comidas" required>
           <button type="submit">Crear Viaje</button>
         </form>
+      </div>
+      <div id="view-reservas" class="viewReservas">
+        <h2>Reservas</h2>
+        <div class="reservasBotones">
+          <button id="reservasActivas">Reservas Activas</button>
+          <button id="reservasCanceladas">Reservas Canceladas</button>
+          <button id="reservasTodas">Todas las reservas</button>
+        </div>
+        <div id="reservas" class="reservas">
+        </div>
       </div>
     </main>
   </div>
