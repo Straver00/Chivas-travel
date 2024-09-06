@@ -188,8 +188,7 @@ reservasElement.addEventListener('click', async e => {
         headers: {
           'Content-Type': 'application/json'
         },
-        credentials: 'include',
-        body: JSON.stringify({ id_usuario }),
+        credentials: 'include'
       });
 
       if (response.ok) {
