@@ -7,7 +7,7 @@ const registerSpan = document.querySelector('#register-form span');
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     // Accede a la ruta protegida
-    const response = await fetch('http://localhost:3000/chivas/protected', {
+    const response = await fetch('https://chivas-travel-api.onrender.com/chivas/protected', {
       method: 'GET',
       credentials: 'include',
     });
@@ -28,7 +28,7 @@ loginForm?.addEventListener('submit', async e => {
   const password = document.querySelector('#login-password').value;
 
   try {
-    const response = await fetch('http://localhost:3000/chivas/login', {
+    const response = await fetch('https://chivas-travel-api.onrender.com/chivas/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ registerForm?.addEventListener('submit', e => {
     return;
   }
 
-  fetch('http://localhost:3000/chivas/register', {
+  fetch('https://chivas-travel-api.onrender.com/chivas/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

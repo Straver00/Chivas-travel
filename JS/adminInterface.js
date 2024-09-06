@@ -6,7 +6,7 @@ let changesMade = false;
 //cargar datos de la base de datos
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    const response = await fetch('http://localhost:3000/chivas/protectedAdmin', {
+    const response = await fetch('https://chivas-travel-api.onrender.com/chivas/protectedAdmin', {
       method: 'GET',
       credentials: 'include',
     });
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   try {
-    const response = await fetch('http://localhost:3000/chivas/viajes');
+    const response = await fetch('https://chivas-travel-api.onrender.com/chivas/viajes');
     viajesData = await response.json();
     filtrarYMostrarViajes('todos');
   } catch (error) {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   try {
-    const response = await fetch('http://localhost:3000/chivas/reservas');
+    const response = await fetch('https://chivas-travel-api.onrender.com/chivas/reservas');
     reservas = await response.json();
     console.log(reservas)
     filtrarYMostrarReservas('todas');
@@ -67,7 +67,7 @@ evitarCerrar();
 // Logout
 document.getElementById('logout-button').addEventListener('click', async () => {
 try {
-  const response = await fetch('http://localhost:3000/chivas/logoutAdmin', {
+  const response = await fetch('https://chivas-travel-api.onrender.com/chivas/logoutAdmin', {
     method: 'POST',
     credentials: 'include',
   });
@@ -126,7 +126,7 @@ trips.addEventListener('click', async e => {
 if (e.target.id === 'cancelar') {
   const id = e.target.parentElement.id;
   try {
-    const response = await fetch(`http://localhost:3000/chivas/cancelViaje/${id}`, {
+    const response = await fetch(`https://chivas-travel-api.onrender.com/chivas/cancelViaje/${id}`, {
       method: 'POST',
       credentials: 'include',
       body: JSON.stringify({ id_usuario }),
@@ -183,7 +183,7 @@ reservasElement.addEventListener('click', async e => {
     const id_usuario = e.target.parentElement.querySelector('p:nth-child(3)').textContent.split(' ')[2];
     console.log(id_reserva, id_usuario);
     try {
-      const response = await fetch(`http://localhost:3000/chivas/confirmPago/${id_reserva}`, {
+      const response = await fetch(`https://chivas-travel-api.onrender.com/chivas/confirmPago/${id_reserva}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -208,7 +208,7 @@ reservasElement.addEventListener('click', async e => {
     const id_reserva = e.target.parentElement.id;
 
     try {
-      const response = await fetch(`http://localhost:3000/chivas/refundPago/${id_reserva}`, {
+      const response = await fetch(`https://chivas-travel-api.onrender.com/chivas/refundPago/${id_reserva}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -243,7 +243,7 @@ formCrearViaje.addEventListener('submit', async e => {
 
 
   try {
-    const response = await fetch('http://localhost:3000/chivas/createViaje', {
+    const response = await fetch('https://chivas-travel-api.onrender.com/chivas/createViaje', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -278,7 +278,7 @@ const precio_boleta = document.getElementById('precio-viaje-edit').value;
 const comidas_incluidas = document.getElementById('comidas-edit').value;
 
 try {
-  const response = await fetch(`http://localhost:3000/chivas/editViaje/${id_viaje}`, {
+  const response = await fetch(`https://chivas-travel-api.onrender.com/chivas/editViaje/${id_viaje}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

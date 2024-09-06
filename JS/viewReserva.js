@@ -3,7 +3,7 @@ let protectedData;
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     // Accede a la ruta protegida
-    const response = await fetch('http://localhost:3000/chivas/protected', {
+    const response = await fetch('https://chivas-travel-api.onrender.com/chivas/protected', {
       method: 'GET',
       credentials: 'include',
     });
@@ -25,7 +25,7 @@ const select = document.getElementById('selectPlace')
 
 async function populateDestinos() {
   try {
-    const response = await fetch('http://localhost:3000/chivas/destinos');
+    const response = await fetch('https://chivas-travel-api.onrender.com/chivas/destinos');
 
     const destinos = await response.json();
     destinos.forEach(destino => {
@@ -50,7 +50,7 @@ searchTrips.addEventListener('click', async () => {
       alert('Por favor selecciona un destino');
       return;
     }
-    const response = await fetch(`http://localhost:3000/chivas/viajes/${select.value}`);
+    const response = await fetch(`https://chivas-travel-api.onrender.com/chivas/viajes/${select.value}`);
     const viajes = await response.json();
     const trips = document.getElementById('trips');
     if (!viajes.length) {
@@ -120,7 +120,7 @@ reserva_button.addEventListener('click', async () => {
   console.log(personasData);
 
   try {
-    const response = await fetch('http://localhost:3000/chivas/createReserva', {
+    const response = await fetch('https://chivas-travel-api.onrender.com/chivas/createReserva', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

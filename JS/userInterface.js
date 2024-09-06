@@ -2,7 +2,7 @@ let id_usuario;
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     // Accede a la ruta protegida
-    const response = await fetch('http://localhost:3000/chivas/protected', {
+    const response = await fetch('https://chivas-travel-api.onrender.com/chivas/protected', {
       method: 'GET',
       credentials: 'include',
     });
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
   try {
-    const response = await fetch(`http://localhost:3000/chivas/reservas/${id_usuario}`, {
+    const response = await fetch(`https://chivas-travel-api.onrender.com/chivas/reservas/${id_usuario}`, {
       method: 'GET',
       credentials: 'include',
     });
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const data = await response.json();
       try {
         for (let i = 0; i < data.length; i++) {
-          const response = await fetch(`http://localhost:3000/chivas/viajesId/${data[i].id_viaje}`);
+          const response = await fetch(`https://chivas-travel-api.onrender.com/chivas/viajesId/${data[i].id_viaje}`);
           const viaje = await response.json();
           const trips = document.getElementById('reservas');
           trips.innerHTML += `
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('logout-button').addEventListener('click', async () => {
     try {
       // Solicita el cierre de sesión
-      await fetch('http://localhost:3000/chivas/logout', {
+      await fetch('https://chivas-travel-api.onrender.com/chivas/logout', {
         method: 'POST',
         credentials: 'include',
       });
@@ -84,7 +84,7 @@ document.addEventListener('click', async (e) => {
   if (e.target.id === 'cancelar') {
     try {
       const id_reserva = e.target.parentElement.id;
-      const response = await fetch(`http://localhost:3000/chivas/cancelReserva/${id_reserva}`, {
+      const response = await fetch(`https://chivas-travel-api.onrender.com/chivas/cancelReserva/${id_reserva}`, {
         method: 'POST',
         credentials: 'include',
       });

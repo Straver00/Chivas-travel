@@ -7,7 +7,7 @@ loginForm?.addEventListener('submit', async e => {
   const password = document.querySelector('#login-password').value;
 
   try {
-    const response = await fetch('http://localhost:3000/chivas/loginAdmin', {
+    const response = await fetch('https://chivas-travel-api.onrender.com/chivas/loginAdmin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ loginForm?.addEventListener('submit', async e => {
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     // Accede a la ruta protegida
-    const response = await fetch('http://localhost:3000/chivas/protectedAdmin', {
+    const response = await fetch('https://chivas-travel-api.onrender.com/chivas/protectedAdmin', {
       method: 'GET',
       credentials: 'include',
     });
