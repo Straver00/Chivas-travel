@@ -322,6 +322,7 @@ function filtrarYMostrarViajes(tipo) {
     const id = viaje.id_viaje;
     const origen = viaje.origen;
     const destino = viaje.destino;
+    const cupo = viaje.cupo;
     const fecha_viaje = viaje.fecha_viaje.split('T')[0];
     const hora_salida = viaje.hora_salida.split(':').slice(0, 2).join(':');
     const hora_regreso = viaje.hora_regreso.split(':').slice(0, 2).join(':');
@@ -333,6 +334,7 @@ function filtrarYMostrarViajes(tipo) {
         <p>ID: ${id}</p>
         <p>Origen: ${origen}</p>
         <p>Destino: ${destino}</p>
+        <p>Cupo: ${cupo}</p>
         <p>Fecha: ${fecha_viaje}</p>
         <p>Hora salida: ${hora_salida}</p>
         <p>Hora llegada: ${hora_regreso}</p>
